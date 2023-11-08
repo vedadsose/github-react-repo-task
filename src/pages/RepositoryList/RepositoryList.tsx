@@ -15,12 +15,12 @@ export default function RepositoryList() {
   const { data, loading, refetch, error } = useQuery<GET_REPOSITORIES_RESPONSE>(
     GET_REPOSITORIES,
     {
-      fetchPolicy: "network-only",
       notifyOnNetworkStatusChange: true,
       variables: {
         query: BASE_QUERY,
         first: 10,
         after: null,
+        before: null,
       },
     }
   );

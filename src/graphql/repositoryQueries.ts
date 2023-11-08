@@ -14,7 +14,6 @@ export const GET_REPOSITORIES = gql`
       after: $after
       before: $before
     ) {
-      repositoryCount
       nodes {
         ... on Repository {
           id
@@ -51,7 +50,6 @@ export interface RepositoryNode {
 
 export interface GET_REPOSITORIES_RESPONSE {
   search: {
-    repositoryCount: number;
     nodes: RepositoryNode[];
     pageInfo: PageInfo;
   };
